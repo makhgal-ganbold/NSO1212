@@ -1,3 +1,5 @@
+^CRAN-RELEASE$
+^cran-comments\.md$
 ^LICENSE\.md$
 ^NSO1212\.Rproj$
 ^\.Rproj\.user$

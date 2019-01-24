@@ -1,6 +1,6 @@
-#' @title Get statistical data
+#' @title Download Statistical Data from the API opendata.1212.mn
 #'
-#' @description Get a table on \url{opendata.1212.mn}.
+#' @description It downloads a table, which contains statistical data, from the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO).
 #'
 #' @param tbl_id character string, Table identification number
 #' @param PERIOD charcter vector, Time
@@ -9,19 +9,19 @@
 #' @param CODE2 charcter vector, Classification code (age, gender etc)
 #'
 #' @return data frame, Statistical data. It has following structure:
-#' \enumerate{
-#'  \item{TBL_ID -}{ Row number}
-#'  \item{Period -}{ Time}
-#'  \item{CODE -}{ Classification code}
-#'  \item{SCR_MN -}{ Classification name /Mongolia/}
-#'  \item{SCR_ENG -}{ Classification name /English/}
-#'  \item{CODE1 -}{ Classification code}
-#'  \item{SCR_MN1 -}{ Classification name /Mongolia/}
-#'  \item{SCR_ENG1 -}{ Classification name /English/}
-#'  \item{CODE2 -}{ Classification code}
-#'  \item{SCR_MN2 -}{ Classification name /Mongolia/}
-#'  \item{SCR_ENG2 -}{ Classification name /English/}
-#'  \item{DTVAL_CO -}{ Data value}
+#' \describe{
+#'  \item{TBL_ID}{Row number}
+#'  \item{Period}{Time}
+#'  \item{CODE}{Classification code}
+#'  \item{SCR_MN}{Classification name in Mongolian}
+#'  \item{SCR_ENG}{Classification name in English}
+#'  \item{CODE1}{Classification code}
+#'  \item{SCR_MN1}{Classification name in Mongolian}
+#'  \item{SCR_ENG1}{Classification name in English}
+#'  \item{CODE2}{Classification code}
+#'  \item{SCR_MN2}{Classification name in Mongolian}
+#'  \item{SCR_ENG2}{Classification name in English}
+#'  \item{DTVAL_CO}{Data value}
 #' }
 #' @export
 #'

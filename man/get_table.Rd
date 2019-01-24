@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_table.R
 \name{get_table}
 \alias{get_table}
-\title{Get statistical data}
+\title{Download Statistical Data from the API opendata.1212.mn}
 \usage{
 get_table(tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL,
   CODE2 = NULL)
@@ -20,23 +20,23 @@ get_table(tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL,
 }
 \value{
 data frame, Statistical data. It has following structure:
-\enumerate{
- \item{TBL_ID -}{ Row number}
- \item{Period -}{ Time}
- \item{CODE -}{ Classification code}
- \item{SCR_MN -}{ Classification name /Mongolia/}
- \item{SCR_ENG -}{ Classification name /English/}
- \item{CODE1 -}{ Classification code}
- \item{SCR_MN1 -}{ Classification name /Mongolia/}
- \item{SCR_ENG1 -}{ Classification name /English/}
- \item{CODE2 -}{ Classification code}
- \item{SCR_MN2 -}{ Classification name /Mongolia/}
- \item{SCR_ENG2 -}{ Classification name /English/}
- \item{DTVAL_CO -}{ Data value}
+\describe{
+ \item{TBL_ID}{Row number}
+ \item{Period}{Time}
+ \item{CODE}{Classification code}
+ \item{SCR_MN}{Classification name in Mongolian}
+ \item{SCR_ENG}{Classification name in English}
+ \item{CODE1}{Classification code}
+ \item{SCR_MN1}{Classification name in Mongolian}
+ \item{SCR_ENG1}{Classification name in English}
+ \item{CODE2}{Classification code}
+ \item{SCR_MN2}{Classification name in Mongolian}
+ \item{SCR_ENG2}{Classification name in English}
+ \item{DTVAL_CO}{Data value}
 }
 }
 \description{
-Get a table on \url{opendata.1212.mn}.
+It downloads a table, which contains statistical data, from the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO).
 }
 \examples{
 nso.data <- get_table(

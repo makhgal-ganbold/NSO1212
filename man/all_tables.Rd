@@ -2,29 +2,29 @@
 % Please edit documentation in R/all_tables.R
 \name{all_tables}
 \alias{all_tables}
-\title{All Tables}
+\title{Brief Information about All Tables on the API opendata.1212.mn}
 \usage{
 all_tables()
 }
 \value{
 data.frame, a list of all available tables. It has following structure:
-\enumerate{
- \item{rownum -}{ Row Number}
- \item{list_id -}{ Sector Number}
- \item{tbl_id -}{ Table identification number}
- \item{tbl_nm -}{ Table Name /Mongolia/}
- \item{tbl_eng_nm -}{ Table Name /English/}
- \item{unit_id -}{ Unit code}
- \item{cd_nm -}{ Unit Name /Mongolia/}
- \item{cd_eng_nm -}{ Unit Name /English/}
- \item{strt_prd -}{ Start date}
- \item{end_prd -}{ Finish date}
- \item{prd_se -}{ Time frequency}
- \item{lst_chn_de -}{ Last updated date}
+\describe{
+ \item{rownum}{Row number}
+ \item{list_id}{Sector number}
+ \item{tbl_id}{Table identification number}
+ \item{tbl_nm}{Table name in Mongolian}
+ \item{tbl_eng_nm}{Table name in English}
+ \item{unit_id}{Unit code}
+ \item{cd_nm}{Unit name in Mongolian}
+ \item{cd_eng_nm}{Unit name in English}
+ \item{strt_prd}{Start date}
+ \item{end_prd}{Finish date}
+ \item{prd_se}{Time frequency}
+ \item{lst_chn_de}{Last update date}
 }
 }
 \description{
-Get a list of all available tables on \url{opendata.1212.mn}.
+Brief information about all available tables on the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO)
 }
 \examples{
 all.tables <- all_tables()

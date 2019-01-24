@@ -2,26 +2,26 @@
 % Please edit documentation in R/get_subsector_info.R
 \name{get_subsector_info}
 \alias{get_subsector_info}
-\title{Get Subsector}
+\title{Detailed Information about a Sub-Sector on the API opendata.1212.mn}
 \usage{
 get_subsector_info(subid)
 }
 \arguments{
-\item{subid}{character string, Sub sector identification number}
+\item{subid}{character string, Sub-sector identification number}
 }
 \value{
-data frame, Subsector information. It has following structures:
-\enumerate{
- \item{rownum -}{ Row number}
- \item{list_id -}{ Sector identification number}
- \item{up_list_id -}{ Sub sector identification number}
- \item{list_nm -}{ Sector name /Mongolia/}
- \item{list_eng_nm -}{ Sector name /English/}
- \item{isExist -}{ Exist sub sector}
+data frame, Sub-sector information. It has following structure:
+\describe{
+ \item{rownum}{Row number}
+ \item{list_id}{Sector identification number}
+ \item{up_list_id}{Sub sector identification number}
+ \item{list_nm}{Sector name in Mongolian}
+ \item{list_eng_nm}{Sector name in English}
+ \item{isExist}{Whether or exist sub-sectors}
 }
 }
 \description{
-Get detailed information about subsectors on \url{opendata.1212.mn}.
+Detailed information about a sub-sector, which is minor classification of data, on the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO)
 }
 \examples{
 subsector_info <- get_subsector_info("976_L05")

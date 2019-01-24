@@ -1,0 +1,16 @@
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(
+  bibtype = "Manual",
+  title = "NSO's Open Data API Handler",
+  author = c(person("Makhgal", "Ganbold")),
+  year = year,
+  note = note,
+  url = "https://CRAN.R-project.org/package=NSO1212",
+  textVersion = paste0(
+    "Makhgal Ganbold (", year, "). ",
+    "NSO1212: NSO's Open Data API Handler. ",
+    note, ". https://CRAN.R-project.org/package=NSO1212"),
+  header = "To cite package 'NSO1212' in publications use:"
+)

@@ -1,8 +1,12 @@
 Package: NSO1212
-Title: NSO's Open Data API Handler
+Title: National Statistical Office of Mongolia's Open Data API Handler
 Version: 1.0.0
-Authors@R: person("MAKHGAL", "Ganbold", email = "makhgal@seas.num.edu.mn", role = c("aut", "cre"))
-Description: Package providing helper functions for the National Statistical Office of Mongolia's open data API (\url{http://opendata.1212.mn/en/doc}) version 2.
+Date: 2019-01-24
+Description: National Statistical Office of Mongolia (NSO) is the national statistical service and an organization of Mongolian government. NSO provides open access and official data via its web site <http://www.1212.mn/> and API <http://opendata.1212.mn/en/doc>. The package NSO1212 has functions for accessing the API service. The functions are compatible with the API v2.0 and get data sets and its detailed informations from the API.
+Authors@R: person("Makhgal", "Ganbold", email = "makhgal@seas.num.edu.mn", role = c("aut", "cre"))
+Maintainer: Makhgal Ganbold <makhgal@seas.num.edu.mn>
+URL: https://github.com/galaamn/NSO1212
+BugReports: https://github.com/galaamn/NSO1212/issues
 Depends: R (>= 3.5.0)
 Imports: 
     httr,
@@ -10,4 +14,6 @@ Imports:
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+ByteCompile: true
+NeedsCompilation: no
 RoxygenNote: 6.1.1

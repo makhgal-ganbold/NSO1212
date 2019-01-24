@@ -1,15 +1,15 @@
-#' @title Get Sector
+#' @title Detailed Information about All Sectors on the API opendata.1212.mn
 #'
-#' @description Get detailed information about all 34 sectors on \url{opendata.1212.mn}.
+#' @description Detailed information about all 34 sectors, which are major classification of data, on the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO)
 #'
-#' @return data frame, Sector information. It has following structures:
-#' \enumerate{
-#'  \item{rownum -}{ Row number}
-#'  \item{list_id -}{ Sector identification number}
-#'  \item{up_list_id -}{ Sub sector identification number}
-#'  \item{list_nm -}{ Sector name /Mongolia/}
-#'  \item{list_eng_nm -}{ Sector name /English/}
-#'  \item{isExist -}{ Exist sub sector}
+#' @return data frame, Sector information. It has following structure:
+#' \describe{
+#'  \item{rownum}{Row number}
+#'  \item{list_id}{Sector identification number}
+#'  \item{up_list_id}{Sub sector identification number}
+#'  \item{list_nm}{Sector name in Mongolian}
+#'  \item{list_eng_nm}{Sector name in English}
+#'  \item{isExist}{Whether or exist sub-sectors}
 #' }
 #' @export
 #'

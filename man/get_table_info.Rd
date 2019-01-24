@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_table_info.R
 \name{get_table_info}
 \alias{get_table_info}
-\title{Table Information and Classification}
+\title{Detailed Information about a Table and Its Classification on the API opendata.1212.mn}
 \usage{
 get_table_info(tbl_id)
 }
@@ -10,25 +10,25 @@ get_table_info(tbl_id)
 \item{tbl_id}{character string, Table identification number}
 }
 \value{
-list, Table information and classification. It has following structures:
-\itemize{
- \item{tbl_id -}{ Table identification number}
- \item{unit_id -}{ Unit Identification number}
- \item{unit_nm -}{ Unit Name /Mongolia/}
- \item{unit_eng_nm -}{ Unit Name /English/}
- \item{obj -}{ Table classification:
-  \itemize{
-   \item{obj_var_id -}{ Variable identification}
-   \item{var_ord_sn -}{ Variable identification number}
-   \item{field -}{ Field name}
-   \item{scr_mn -}{ Variable name /Mongolia/}
-   \item{scr_eng -}{ Variable identification}
-   \item{itm -}{ Variable classification and code:
-    \itemize{
-     \item{itm_id -}{ Classification Number}
-     \item{up_itm_id -}{ Sub classification}
-     \item{scr_mn -}{ Classification name /Mongolia/}
-     \item{scr_eng -}{ Classification name /English/}
+list, Table information and classification. It has following structure:
+\describe{
+ \item{tbl_id}{Table identification number}
+ \item{unit_id}{Unit identification number}
+ \item{unit_nm}{Unit name in Mongolia}
+ \item{unit_eng_nm}{Unit name in English}
+ \item{obj}{Table classification:
+  \describe{
+   \item{obj_var_id}{Variable identification}
+   \item{var_ord_sn}{Variable identification number}
+   \item{field}{Field name}
+   \item{scr_mn}{Variable name in Mongolian}
+   \item{scr_eng}{Variable identification}
+   \item{itm}{Variable classification and code:
+    \describe{
+     \item{itm_id}{Classification number}
+     \item{up_itm_id}{Sub-classification}
+     \item{scr_mn}{Classification name in Mongolian}
+     \item{scr_eng}{Classification name in English}
     }
    }
   }
@@ -36,7 +36,7 @@ list, Table information and classification. It has following structures:
 }
 }
 \description{
-Get detailed information about a table on \url{opendata.1212.mn}.
+Detailed information about a table and its classification on the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO)
 }
 \examples{
 table_info <- get_table_info("DT_NSO_2400_015V2")
