@@ -1,28 +1,6 @@
-
-#' @title All Tables
-#'
-#' @description Get list of all available tables on \url{opendata.1212.mn}.
-#'
-#' @return data.frame, a list of all available tables
-#' @export
-#'
-#' @importFrom jsonlite fromJSON
-#'
-#' @examples
-#' all.tables <- all_tables()
-#' print(all.tables$tbl_nm)
-#' print(all.tables$tbl_id)
-#' @seealso \link{statistical_data}
-
-all_tables <- function () {
-
-  jsonlite::fromJSON("http://opendata.1212.mn/api/Itms?type=json")
-
-}
-
 #' @title Get statistical data
 #'
-#' @description Get statistical data from \url{opendata.1212.mn}.
+#' @description Get a table on \url{opendata.1212.mn}.
 #'
 #' @param tbl_id character string, Table identification number
 #' @param PERIOD charcter vector, Time
@@ -30,23 +8,38 @@ all_tables <- function () {
 #' @param CODE1 charcter vector, Classification code (age, gender etc)
 #' @param CODE2 charcter vector, Classification code (age, gender etc)
 #'
-#' @return data frame, Statistical data
+#' @return data frame, Statistical data. It has following structure:
+#' \enumerate{
+#'  \item{TBL_ID -}{ Row number}
+#'  \item{Period -}{ Time}
+#'  \item{CODE -}{ Classification code}
+#'  \item{SCR_MN -}{ Classification name /Mongolia/}
+#'  \item{SCR_ENG -}{ Classification name /English/}
+#'  \item{CODE1 -}{ Classification code}
+#'  \item{SCR_MN1 -}{ Classification name /Mongolia/}
+#'  \item{SCR_ENG1 -}{ Classification name /English/}
+#'  \item{CODE2 -}{ Classification code}
+#'  \item{SCR_MN2 -}{ Classification name /Mongolia/}
+#'  \item{SCR_ENG2 -}{ Classification name /English/}
+#'  \item{DTVAL_CO -}{ Data value}
+#' }
 #' @export
 #'
 #' @importFrom httr POST
 #' @importFrom utils type.convert
 #'
 #' @examples
-#' statistical.data <- statistical_data(
+#' nso.data <- get_table(
 #'   tbl_id = "DT_NSO_2400_015V2",
 #'   PERIOD = c("201711", "201712", "201801"),
 #'   CODE = c("10", "11"),
 #'   CODE1 = "11"
 #' )
-#' print(statistical.data)
-#' @seealso \link{all_tables}
+#' print(nso.data)
+#' @seealso \link{all_tables}, \link{get_table_info}, \link{get_sector_info}
+#' @references \url{http://opendata.1212.mn/en/doc/Api/POST-api-Data}
 
-statistical_data <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 = NULL) {
+get_table <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 = NULL) {
 
   # set query
 

@@ -1,8 +1,8 @@
 Package: NSO1212
 Title: NSO's Open Data API Handler
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: person("MAKHGAL", "Ganbold", email = "makhgal@seas.num.edu.mn", role = c("aut", "cre"))
-Description: Package providing helper functions for the National Statistical Office of Mongolia's open data API (\url{opendata.1212.mn}) version 2.
+Description: Package providing helper functions for the National Statistical Office of Mongolia's open data API (\url{http://opendata.1212.mn/en/doc}) version 2.
 Depends: R (>= 3.5.0)
 Imports: 
     httr,
