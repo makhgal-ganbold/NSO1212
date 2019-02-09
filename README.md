@@ -34,6 +34,12 @@ table_info$obj[[1]]$itm[[1]]$scr_mn
 
 ## Installation
 
+From CRAN
+
+```R
+install.packages("NSO1212")
+```
+
 From the repository on GitHub
 
 ```R
