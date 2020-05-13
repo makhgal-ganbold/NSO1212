@@ -1,26 +1,16 @@
-## Resubmission
-
-* Author and Maintainer Name:
-  Format of authors name was changed to "Title case".
-* DESCRIPTION:
-  1. Description was become more informative and definitely.
-  2. Added the abbreviation NSO, an explanation for "1212" and features of functions.
-* Function Help Pages:
-  1. More informative titles and descriptions were added.
-  2. The return value sections were re-formatted by using the environment 'describe' to remove the dashes and spaces.
-  3. Misspellings in the help pages were corrected.
 
 ## Test environments
 
-* local ubuntu 18.10, R 3.5.2
-* win-builder (devel and release)
+* local ubuntu 20.04, R 3.6.3
+* builder.r-hub.io (devtools::check_rhub())
+* devtools::check_win_oldrelease(), devtools::check_win_release(), devtools::check_win_devel()
 
 ## R CMD check results
 
-There were no ERRORs, WARNINGs or NOTEs when we checked with the function devtools::check().
+There were no ERRORs, WARNINGs or NOTEs when we checked with the functions devtools::check(), devtools::check_win_oldrelease(), devtools::check_win_release() and devtools::check_win_devel().
 
-It was developed on R 3.5.1 and checked on R 3.5.2. So devtools::check_win_oldrelease() and some devtools::check_rhub() checks for R 3.4.x were failed. All other checks were passed successfully.
+For the check with devtools::check_rhub(), there was only one note about elapsed time of example execution time for Windows only. The actual execution time (elapsed time) was 5.87 seconds. For other operating system, everything was OK.
 
 ## Downstream dependencies
 
-There are currently no downstream dependencies for this package. Because it's the 1st release.
+There are currently no downstream dependencies for this package.

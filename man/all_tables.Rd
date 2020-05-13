@@ -2,12 +2,15 @@
 % Please edit documentation in R/all_tables.R
 \name{all_tables}
 \alias{all_tables}
-\title{Brief Information about All Tables on the API opendata.1212.mn}
+\title{Brief Information about All Tables}
 \usage{
-all_tables()
+all_tables(try = FALSE)
+}
+\arguments{
+\item{try}{logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
 }
 \value{
-data.frame, a list of all available tables. It has following structure:
+A data frame which has brief information of all available tables if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
 \describe{
  \item{rownum}{Row number}
  \item{list_id}{Sector number}
@@ -24,12 +27,17 @@ data.frame, a list of all available tables. It has following structure:
 }
 }
 \description{
-Brief information about all available tables on the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO)
+Brief information about all available tables on the API \href{http://opendata.1212.mn/en/doc}{opendata.1212.mn} which is supported by \href{http://www.en.nso.mn}{National Statistical Office of Mongolia (NSO)}
+}
+\details{
+The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
 }
 \examples{
-all.tables <- all_tables()
-print(all.tables$tbl_nm)
-print(all.tables$tbl_id)
+all.tables <- all_tables(try = TRUE)
+if (!inherits(all.tables, "try-error")) {
+  print(all.tables$tbl_nm)
+  print(all.tables$tbl_id)
+}
 }
 \references{
 \url{http://opendata.1212.mn/en/doc/Api/GET-api-Itms}

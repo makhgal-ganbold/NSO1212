@@ -2,12 +2,15 @@
 % Please edit documentation in R/get_sector_info.R
 \name{get_sector_info}
 \alias{get_sector_info}
-\title{Detailed Information about All Sectors on the API opendata.1212.mn}
+\title{Detailed Information about All Sectors}
 \usage{
-get_sector_info()
+get_sector_info(try = FALSE)
+}
+\arguments{
+\item{try}{logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
 }
 \value{
-data frame, Sector information. It has following structure:
+A data frame which has sector information if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
 \describe{
  \item{rownum}{Row number}
  \item{list_id}{Sector identification number}
@@ -18,11 +21,16 @@ data frame, Sector information. It has following structure:
 }
 }
 \description{
-Detailed information about all 34 sectors, which are major classification of data, on the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO)
+Detailed information about all 34 sectors, which are major classification of data, on the API \href{http://opendata.1212.mn/en/doc}{opendata.1212.mn} which is supported by \href{http://www.en.nso.mn}{National Statistical Office of Mongolia (NSO)}
+}
+\details{
+The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
 }
 \examples{
-sector_info <- get_sector_info()
-print(sector_info)
+sector_info <- get_sector_info(try = TRUE)
+if (!inherits(sector_info, "try-error")) {
+  print(sector_info)
+}
 }
 \references{
 \url{http://opendata.1212.mn/en/doc/Api/GET-api-Sector}

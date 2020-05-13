@@ -1,0 +1,6 @@
+1.1.0
+ - The error handling feature has been added due to a HTTP 500 error on the NSO server.
+ - The new argument "simplify" has been added to the function "get_table_info". A user-friendly value is returned by using this new argument.
+
+1.0.0
+ - Initial release

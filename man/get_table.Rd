@@ -2,24 +2,32 @@
 % Please edit documentation in R/get_table.R
 \name{get_table}
 \alias{get_table}
-\title{Download Statistical Data from the API opendata.1212.mn}
+\title{Download Statistical Data}
 \usage{
-get_table(tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL,
-  CODE2 = NULL)
+get_table(
+  tbl_id,
+  PERIOD = NULL,
+  CODE = NULL,
+  CODE1 = NULL,
+  CODE2 = NULL,
+  try = FALSE
+)
 }
 \arguments{
 \item{tbl_id}{character string, Table identification number}
 
-\item{PERIOD}{charcter vector, Time}
+\item{PERIOD}{character vector, Time}
 
-\item{CODE}{charcter vector, Classification code (age, gender etc)}
+\item{CODE}{character vector, Classification code (age, gender etc)}
 
-\item{CODE1}{charcter vector, Classification code (age, gender etc)}
+\item{CODE1}{character vector, Classification code (age, gender etc)}
 
-\item{CODE2}{charcter vector, Classification code (age, gender etc)}
+\item{CODE2}{character vector, Classification code (age, gender etc)}
+
+\item{try}{logical: Should the main body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
 }
 \value{
-data frame, Statistical data. It has following structure:
+A data frame if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
 \describe{
  \item{TBL_ID}{Row number}
  \item{Period}{Time}
@@ -36,16 +44,22 @@ data frame, Statistical data. It has following structure:
 }
 }
 \description{
-It downloads a table, which contains statistical data, from the API \url{opendata.1212.mn} is supported by National Statistical Office of Mongolia (NSO).
+It downloads a table, which contains statistical data, from the API \href{http://opendata.1212.mn/en/doc}{opendata.1212.mn} which is supported by \href{http://www.en.nso.mn}{National Statistical Office of Mongolia (NSO)}.
+}
+\details{
+The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
 }
 \examples{
 nso.data <- get_table(
   tbl_id = "DT_NSO_2400_015V2",
   PERIOD = c("201711", "201712", "201801"),
   CODE = c("10", "11"),
-  CODE1 = "11"
+  CODE1 = "11",
+  try = TRUE
 )
-print(nso.data)
+if (!inherits(nso.data, "try-error")) {
+  print(nso.data)
+}
 }
 \references{
 \url{http://opendata.1212.mn/en/doc/Api/POST-api-Data}
