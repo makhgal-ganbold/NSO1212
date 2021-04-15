@@ -1,3 +1,9 @@
+1.2.0
+ - The function "make_period" has been added.
+ - The argument "timeout" has been added to main functions.
+ - The function "all_tables" has been entirely rewritten.
+ - Examples have been modified to pass the automated checking of CRAN. The reason of such changes is unstable responses from the NSO server.
+
 1.1.0
  - The error handling feature has been added due to a HTTP 500 error on the NSO server.
  - The new argument "simplify" has been added to the function "get_table_info". A user-friendly value is returned by using this new argument.

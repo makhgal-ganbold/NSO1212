@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_table.R
 \name{get_table}
 \alias{get_table}
-\title{Download Statistical Data}
+\alias{make_period}
+\title{Download a Database Table}
 \usage{
 get_table(
   tbl_id,
@@ -10,21 +11,26 @@ get_table(
   CODE = NULL,
   CODE1 = NULL,
   CODE2 = NULL,
-  try = FALSE
+  try = FALSE,
+  timeout = Inf
 )
+
+make_period(start, end = NULL, period = "Y")
 }
 \arguments{
 \item{tbl_id}{character string, Table identification number}
 
 \item{PERIOD}{character vector, Time}
 
-\item{CODE}{character vector, Classification code (age, gender etc)}
-
-\item{CODE1}{character vector, Classification code (age, gender etc)}
-
-\item{CODE2}{character vector, Classification code (age, gender etc)}
+\item{CODE, CODE1, CODE2}{character vector, Classification code (age, gender etc)}
 
 \item{try}{logical: Should the main body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
+
+\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.}
+
+\item{start, end}{Starting and stopping moments of period which has following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD and QQ, respectively, indicate year, month, day and quarter of a date. These are written as a number has a leading zero, if necessary.}
+
+\item{period}{One of single characters "Y" (default), "M", "D" and "Q" which represent periods yearly, monthly, daily and quarterly respectively. There is one more value "F" which is supported by the API. However it can be used for such function due to there is not a fixed rule for this type of periods.}
 }
 \value{
 A data frame if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
@@ -40,22 +46,30 @@ A data frame if the function is executed without error, but an object of class "
  \item{CODE2}{Classification code}
  \item{SCR_MN2}{Classification name in Mongolian}
  \item{SCR_ENG2}{Classification name in English}
- \item{DTVAL_CO}{Data value}
+ \item{DTVAL_CO}{Datum}
 }
+
+a character vector which contains
 }
 \description{
-It downloads a table, which contains statistical data, from the API \href{http://opendata.1212.mn/en/doc}{opendata.1212.mn} which is supported by \href{http://www.en.nso.mn}{National Statistical Office of Mongolia (NSO)}.
+It downloads a database table, which contains statistical data, from the open-data API which is supported by National Statistical Office of Mongolia (NSO).
 }
 \details{
 The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
 }
+\section{Functions}{
+\itemize{
+\item \code{make_period}: It is used to prepare values for the argument \code{PERIOD} of the function \link{get_table}.
+}}
+
 \examples{
 nso.data <- get_table(
   tbl_id = "DT_NSO_2400_015V2",
-  PERIOD = c("201711", "201712", "201801"),
+  PERIOD = make_period(start = "201711", end = "202103", period = "M"),
   CODE = c("10", "11"),
   CODE1 = "11",
-  try = TRUE
+  try = TRUE,  # to prevent a server error
+  timeout = 4
 )
 if (!inherits(nso.data, "try-error")) {
   print(nso.data)

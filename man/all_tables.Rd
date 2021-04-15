@@ -2,15 +2,17 @@
 % Please edit documentation in R/all_tables.R
 \name{all_tables}
 \alias{all_tables}
-\title{Brief Information about All Tables}
+\title{Brief Information about All Database Tables}
 \usage{
-all_tables(try = FALSE)
+all_tables(try = FALSE, timeout = Inf)
 }
 \arguments{
 \item{try}{logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
+
+\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.}
 }
 \value{
-A data frame which has brief information of all available tables if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
+A data frame which has brief information of all available database tables if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
 \describe{
  \item{rownum}{Row number}
  \item{list_id}{Sector number}
@@ -27,16 +29,15 @@ A data frame which has brief information of all available tables if the function
 }
 }
 \description{
-Brief information about all available tables on the API \href{http://opendata.1212.mn/en/doc}{opendata.1212.mn} which is supported by \href{http://www.en.nso.mn}{National Statistical Office of Mongolia (NSO)}
+Brief information about all available database tables on the open-data API which is supported by National Statistical Office of Mongolia (NSO)
 }
 \details{
 The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
 }
 \examples{
-all.tables <- all_tables(try = TRUE)
+all.tables <- all_tables(try = TRUE, timeout = 4)
 if (!inherits(all.tables, "try-error")) {
-  print(all.tables$tbl_nm)
-  print(all.tables$tbl_id)
+  str(all.tables)
 }
 }
 \references{
