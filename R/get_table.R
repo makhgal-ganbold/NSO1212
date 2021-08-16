@@ -129,9 +129,9 @@ get_table <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 =
 
 #' @describeIn get_table It is used to prepare values for the argument \code{PERIOD} of the function \link{get_table}.
 #' @param start,end Starting and stopping moments of period which has following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD and QQ, respectively, indicate year, month, day and quarter of a date. These are written as a number has a leading zero, if necessary.
-#' @param period One of single characters "Y" (default), "M", "D" and "Q" which represent periods yearly, monthly, daily and quarterly respectively. There is one more value "F" which is supported by the API. However it can be used for such function due to there is not a fixed rule for this type of periods.
+#' @param period One of single characters "Y" (default), "M", "D" and "Q" which represent periods yearly, monthly, daily and quarterly respectively. There is one more value "F" which is supported by the API. However it can not be used for such function due to there is not a fixed rule for this type of periods.
 #'
-#' @return a character vector which contains
+#' @return a character vector which contains an API compatible period.
 #'
 #' @export
 

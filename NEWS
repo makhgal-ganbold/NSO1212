@@ -1,3 +1,7 @@
+1.3.0
+ - The argument "na.rm" has been added to the function "all_tables".
+ - Documentation of the function "make_period" has been corrected.
+
 1.2.0
  - The function "make_period" has been added.
  - The argument "timeout" has been added to main functions.

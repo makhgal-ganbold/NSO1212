@@ -11,4 +11,4 @@ There were no ERRORs, WARNINGs or NOTEs when we checked with the functions devto
 
 ## Downstream dependencies
 
-There are currently no downstream dependencies for this package.
+There are currently no downstream dependencies for this package when we checked with the function devtools::revdep().

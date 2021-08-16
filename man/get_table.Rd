@@ -30,7 +30,7 @@ make_period(start, end = NULL, period = "Y")
 
 \item{start, end}{Starting and stopping moments of period which has following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD and QQ, respectively, indicate year, month, day and quarter of a date. These are written as a number has a leading zero, if necessary.}
 
-\item{period}{One of single characters "Y" (default), "M", "D" and "Q" which represent periods yearly, monthly, daily and quarterly respectively. There is one more value "F" which is supported by the API. However it can be used for such function due to there is not a fixed rule for this type of periods.}
+\item{period}{One of single characters "Y" (default), "M", "D" and "Q" which represent periods yearly, monthly, daily and quarterly respectively. There is one more value "F" which is supported by the API. However it can not be used for such function due to there is not a fixed rule for this type of periods.}
 }
 \value{
 A data frame if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
@@ -49,7 +49,7 @@ A data frame if the function is executed without error, but an object of class "
  \item{DTVAL_CO}{Datum}
 }
 
-a character vector which contains
+a character vector which contains an API compatible period.
 }
 \description{
 It downloads a database table, which contains statistical data, from the open-data API which is supported by National Statistical Office of Mongolia (NSO).

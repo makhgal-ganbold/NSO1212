@@ -4,12 +4,14 @@
 \alias{all_tables}
 \title{Brief Information about All Database Tables}
 \usage{
-all_tables(try = FALSE, timeout = Inf)
+all_tables(try = FALSE, timeout = Inf, na.rm = FALSE)
 }
 \arguments{
 \item{try}{logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
 
 \item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.}
+
+\item{na.rm}{logical: If \code{TRUE}, it removes empty rows in a data frame which is result of this function.}
 }
 \value{
 A data frame which has brief information of all available database tables if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
