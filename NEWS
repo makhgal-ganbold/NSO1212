@@ -1,3 +1,6 @@
+1.4.0
+ - Converts raw content to characters by using UTF-8 encoding.
+
 1.3.0
  - The argument "na.rm" has been added to the function "all_tables".
  - Documentation of the function "make_period" has been corrected.

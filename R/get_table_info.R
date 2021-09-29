@@ -68,7 +68,7 @@ get_table_info <- function (tbl_id, simplify = FALSE, try = FALSE, timeout = Inf
     if (response$status_code != 200) {
       stop(paste0("HTTP status code: ", response$status_code))
     }
-    table_info <- jsonlite::parse_json(rawToChar(response$content))
+    table_info <- jsonlite::parse_json(httr::content(response, as = "text", type = "application/json", encoding = "UTF-8"))
     if (simplify) {
       table_info <- c(table_info["tbl_id"], prepare.unit_info(table_info), prepare.code_info(table_info), prepare.codes(table_info))
     }

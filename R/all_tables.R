@@ -49,7 +49,7 @@ all_tables <- function (try = FALSE, timeout = Inf, na.rm = FALSE) {
     if (response$status_code != 200) {
       stop(paste0("HTTP status code: ", response$status_code))
     }
-    all.tables <- jsonlite::fromJSON(rawToChar(response$content))
+    all.tables <- jsonlite::fromJSON(httr::content(response, as = "text", type = "application/json", encoding = "UTF-8"))
     if (na.rm) {
       all.tables <- stats::na.omit(all.tables)
     }

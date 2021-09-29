@@ -44,7 +44,7 @@ get_subsector_info <- function (subid, try = FALSE, timeout = Inf) {
     if (response$status_code != 200) {
       stop(paste0("HTTP status code: ", response$status_code))
     }
-    jsonlite::fromJSON(rawToChar(response$content))
+    jsonlite::fromJSON(httr::content(response, as = "text", type = "application/json", encoding = "UTF-8"))
   })
   if (try) {
     return(try(expr = eval(expr), silent = TRUE))

@@ -89,7 +89,7 @@ get_table <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 =
 
     # response to list
 
-    data.object <- jsonlite::parse_json(rawToChar(response$content))
+    data.object <- jsonlite::parse_json(httr::content(response, as = "text", type = "application/json", encoding = "UTF-8"))
 
     # Check response
 
