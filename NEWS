@@ -6,8 +6,8 @@
  - Converts raw content to characters by using UTF-8 encoding.
 
 1.3.0
- - The argument "na.rm" has been added to "all_tables" function.
- - Documentation of "make_period" function has been corrected.
+ - The argument "na.rm" has been added to the "all_tables" function.
+ - Documentation of the "make_period" function has been corrected.
 
 1.2.0
  - The function "make_period" has been added.
@@ -17,7 +17,7 @@
 
 1.1.0
  - The error handling feature has been added due to an HTTP 500 error on the NSO server.
- - The new argument "simplify" has been added to "get_table_info" function. A user-friendly value is returned by using this new argument.
+ - The new argument "simplify" has been added to the "get_table_info" function. It provides the ability to return a user-friendly value.
 
 1.0.0
  - Initial release

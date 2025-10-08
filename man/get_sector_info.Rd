@@ -12,7 +12,7 @@ get_sector_info(try = FALSE, timeout = Inf)
 \item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.}
 }
 \value{
-If the function is executed without error, it returns a data frame that includes sector information. Otherwise, it returns an object of class "try-error" containing the error message. The data frame has the following structure:
+If the function is executed without error, it returns a data frame that includes sector information. Otherwise, it returns a class "try-error" object containing the error message. The data frame has the following structure:
 \describe{
  \item{rownum}{Row number}
  \item{list_id}{Sector identification number}
@@ -23,10 +23,10 @@ If the function is executed without error, it returns a data frame that includes
 }
 }
 \description{
-Detailed information about all main sectors are the main classification of data on the open-data API, which is supported by the National Statistical Office of Mongolia (NSO)
+Detailed information about all main sectors is the primary classification of data on the open-data API supported by the National Statistical Office of Mongolia (NSO)
 }
 \details{
-The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
+The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
 }
 \examples{
 sector_info <- get_sector_info(try = TRUE, timeout = 4)

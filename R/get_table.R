@@ -1,6 +1,6 @@
 #' @title Download a Database Table
 #'
-#' @description It downloads a database table, which contains statistical data, from the open-data API is supported by the National Statistical Office of Mongolia (NSO).
+#' @description It downloads a database table containing statistical data from the open-data API supported by the National Statistical Office of Mongolia (NSO).
 #'
 #' @param tbl_id character string, Table identification number
 #' @param PERIOD character vector, Time
@@ -8,9 +8,9 @@
 #' @param try logical: Should the main body of the function be wrapped by the function \code{\link[base]{try}}? See details.
 #' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.
 #'
-#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
+#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
 #'
-#' @return A data frame if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has the following structure:
+#' @return A data frame if the function is executed without error, but an object of class "try-error" containing the error message if it fails. The data frame has the following structure:
 #' \describe{
 #'  \item{TBL_ID}{Row number}
 #'  \item{Period}{Time}
@@ -130,10 +130,10 @@ get_table <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 =
 }
 
 #' @describeIn get_table It is used to prepare values for the argument \code{PERIOD} of the function \link{get_table}.
-#' @param start,end Starting and stopping moments of a period which has the following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD, and QQ, respectively, indicate the year, month, day, and quarter of a date. If necessary, write it as a number that has a leading zero.
-#' @param period One of the following letters: "Y" (default), "M", "D", and "Q" respectively represent periods yearly, monthly, daily, and quarterly. There is the other value (F) that is supported by the API. It can not be used for such a function because it doesn't indicate a specific period.
+#' @param start,end The starting and stopping moments of a period have the following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD, and QQ, respectively, indicate a date's year, month, day, and quarter. If necessary, write it as a number that has a leading zero.
+#' @param period One of the following letters: "Y" (default), "M", "D", and "Q" respectively represent periods yearly, monthly, daily, and quarterly. There is another value (F) that means no specific time period; you cannot use it for this function.
 #'
-#' @return a character vector that contains an API compatible period
+#' @return A character vector that contains an API compatible period
 #'
 #' @export
 

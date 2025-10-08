@@ -25,10 +25,10 @@ If the function is executed without error, it returns a data frame that includes
 }
 }
 \description{
-Detailed information about a sub-sector, which is the minor classification of data, on the open-data API is supported by the National Statistical Office of Mongolia
+Detailed information about a sub-sector, which is the minor classification of data, on the open-data API supported by the National Statistical Office of Mongolia
 }
 \details{
-The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
+The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
 }
 \examples{
 subsector_info <- get_subsector_info("976_L05", try = TRUE, timeout = 4)

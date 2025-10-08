@@ -1,13 +1,13 @@
 #' @title Detailed Information about a Database Table and Its Classification
 #'
-#' @description Detailed information about a database table and its classification on the open-data API is supported by the National Statistical Office of Mongolia (NSO)
+#' @description Detailed information about a database table and its classification on the open-data API supported by the National Statistical Office of Mongolia (NSO)
 #'
 #' @param tbl_id character string, Table identification number
 #' @param simplify logical: Should the result be simplified to a vector and a data frame?
 #' @param try logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.
 #' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.
 #'
-#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
+#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
 #'
 #' @return If the function is executed without error, it returns a list that includes detailed information about the database table and its classification. If it fails, it returns an object of class "try-error" containing the error message. The list has the following structure:
 #' \describe{

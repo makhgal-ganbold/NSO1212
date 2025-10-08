@@ -28,12 +28,12 @@ make_period(start, end = NULL, period = "Y")
 
 \item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.}
 
-\item{start, end}{Starting and stopping moments of a period which has the following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD, and QQ, respectively, indicate the year, month, day, and quarter of a date. If necessary, write it as a number that has a leading zero.}
+\item{start, end}{The starting and stopping moments of a period have the following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD, and QQ, respectively, indicate a date's year, month, day, and quarter. If necessary, write it as a number that has a leading zero.}
 
-\item{period}{One of the following letters: "Y" (default), "M", "D", and "Q" respectively represent periods yearly, monthly, daily, and quarterly. There is the other value (F) that is supported by the API. It can not be used for such a function because it doesn't indicate a specific period.}
+\item{period}{One of the following letters: "Y" (default), "M", "D", and "Q" respectively represent periods yearly, monthly, daily, and quarterly. There is another value (F) that means no specific time period; you cannot use it for this function.}
 }
 \value{
-A data frame if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has the following structure:
+A data frame if the function is executed without error, but an object of class "try-error" containing the error message if it fails. The data frame has the following structure:
 \describe{
  \item{TBL_ID}{Row number}
  \item{Period}{Time}
@@ -49,13 +49,13 @@ A data frame if the function is executed without error, but an object of class "
  \item{DTVAL_CO}{Datum}
 }
 
-a character vector that contains an API compatible period
+A character vector that contains an API compatible period
 }
 \description{
-It downloads a database table, which contains statistical data, from the open-data API is supported by the National Statistical Office of Mongolia (NSO).
+It downloads a database table containing statistical data from the open-data API supported by the National Statistical Office of Mongolia (NSO).
 }
 \details{
-The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
+The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
 }
 \section{Functions}{
 \itemize{

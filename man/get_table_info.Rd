@@ -43,10 +43,10 @@ If the function is executed without error, it returns a list that includes detai
 if \code{simplify} is \code{TRUE}, an user-friendly result is returned.
 }
 \description{
-Detailed information about a database table and its classification on the open-data API is supported by the National Statistical Office of Mongolia (NSO)
+Detailed information about a database table and its classification on the open-data API supported by the National Statistical Office of Mongolia (NSO)
 }
 \details{
-The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
+The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
 }
 \examples{
 # tree shaped result
