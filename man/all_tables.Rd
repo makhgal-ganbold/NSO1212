@@ -9,12 +9,12 @@ all_tables(try = FALSE, timeout = Inf, na.rm = FALSE)
 \arguments{
 \item{try}{logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
 
-\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.}
+\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.}
 
-\item{na.rm}{logical: If \code{TRUE}, it removes empty rows in a data frame which is result of this function.}
+\item{na.rm}{logical: If \code{TRUE}, it removes empty rows in a data frame which is the result of this function.}
 }
 \value{
-A data frame which has brief information of all available database tables if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
+If the function is executed without error, it returns a data frame that has brief information of all available database tables. Otherwise, it returns an object of class "try-error" containing the error message. The data frame has the following structure:
 \describe{
  \item{rownum}{Row number}
  \item{list_id}{Sector number}
@@ -31,10 +31,10 @@ A data frame which has brief information of all available database tables if the
 }
 }
 \description{
-Brief information about all available database tables on the open-data API which is supported by National Statistical Office of Mongolia (NSO)
+Brief information about all available database tables on the open-data API, which is supported by the National Statistical Office of Mongolia (NSO)
 }
 \details{
-The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
+The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
 }
 \examples{
 all.tables <- all_tables(try = TRUE, timeout = 4)

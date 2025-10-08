@@ -11,10 +11,10 @@ get_subsector_info(subid, try = FALSE, timeout = Inf)
 
 \item{try}{logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
 
-\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.}
+\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.}
 }
 \value{
-A data frame which has sub-sector information if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
+If the function is executed without error, it returns a data frame that includes sub-sector information. If it fails, it returns an object of class "try-error" containing the error message. The data frame has the following structure:
 \describe{
  \item{rownum}{Row number}
  \item{list_id}{Sector identification number}
@@ -25,10 +25,10 @@ A data frame which has sub-sector information if the function is executed withou
 }
 }
 \description{
-Detailed information about a sub-sector, which is minor classification of data, on the open-data API which is supported by National Statistical Office of Mongolia
+Detailed information about a sub-sector, which is the minor classification of data, on the open-data API is supported by the National Statistical Office of Mongolia
 }
 \details{
-The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
+The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
 }
 \examples{
 subsector_info <- get_subsector_info("976_L05", try = TRUE, timeout = 4)

@@ -48,7 +48,7 @@ devtools::install_github("galaamn/NSO1212")
 
 ## Author
 
-[Makhgal Ganbold](https://www.galaa.mn/ "Galaa's Personal Page"), National University of Mongolia
+[Makhgal Ganbold](https://www.galaa.net/), National University of Mongolia
 
 ## Copyright
 

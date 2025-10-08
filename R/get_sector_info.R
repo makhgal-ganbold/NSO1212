@@ -1,13 +1,13 @@
 #' @title Detailed Information about All Main Sectors
 #'
-#' @description Detailed information about all main sectors, which are major classification of data, on the open-data API which is supported by National Statistical Office of Mongolia (NSO)
+#' @description Detailed information about all main sectors are the main classification of data on the open-data API, which is supported by the National Statistical Office of Mongolia (NSO)
 #'
 #' @param try logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.
-#' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.
+#' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.
 #'
-#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
+#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
 #'
-#' @return A data frame which has sector information if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
+#' @return If the function is executed without error, it returns a data frame that includes sector information. Otherwise, it returns an object of class "try-error" containing the error message. The data frame has the following structure:
 #' \describe{
 #'  \item{rownum}{Row number}
 #'  \item{list_id}{Sector identification number}

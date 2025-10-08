@@ -13,10 +13,10 @@ get_table_info(tbl_id, simplify = FALSE, try = FALSE, timeout = Inf)
 
 \item{try}{logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.}
 
-\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.}
+\item{timeout}{positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.}
 }
 \value{
-A list which contains information about database table and its classification if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The list has following structure:
+If the function is executed without error, it returns a list that includes detailed information about the database table and its classification. If it fails, it returns an object of class "try-error" containing the error message. The list has the following structure:
 \describe{
  \item{tbl_id}{Table identification number}
  \item{unit_id}{Unit identification number}
@@ -43,10 +43,10 @@ A list which contains information about database table and its classification if
 if \code{simplify} is \code{TRUE}, an user-friendly result is returned.
 }
 \description{
-Detailed information about a database table and its classification on the open-data API which is supported by National Statistical Office of Mongolia (NSO)
+Detailed information about a database table and its classification on the open-data API is supported by the National Statistical Office of Mongolia (NSO)
 }
 \details{
-The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
+The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
 }
 \examples{
 # tree shaped result

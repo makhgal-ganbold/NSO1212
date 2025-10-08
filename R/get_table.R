@@ -1,16 +1,16 @@
 #' @title Download a Database Table
 #'
-#' @description It downloads a database table, which contains statistical data, from the open-data API which is supported by National Statistical Office of Mongolia (NSO).
+#' @description It downloads a database table, which contains statistical data, from the open-data API is supported by the National Statistical Office of Mongolia (NSO).
 #'
 #' @param tbl_id character string, Table identification number
 #' @param PERIOD character vector, Time
 #' @param CODE,CODE1,CODE2 character vector, Classification code (age, gender etc)
 #' @param try logical: Should the main body of the function be wrapped by the function \code{\link[base]{try}}? See details.
-#' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. Can not be less than 1 ms or 0.001 s.
+#' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.
 #'
-#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. if \code{try} is \code{TRUE}, you have to write code with error handling as shown in the example.
+#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, error handling is supported. If \code{try} is \code{TRUE}, you have to write code with error handling, as shown in the example.
 #'
-#' @return A data frame if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has following structure:
+#' @return A data frame if the function is executed without error, but an object of class "try-error" containing the error message, if it fails. The data frame has the following structure:
 #' \describe{
 #'  \item{TBL_ID}{Row number}
 #'  \item{Period}{Time}
@@ -46,6 +46,8 @@
 #' @references \url{http://opendata.1212.mn/en/doc/Api/POST-api-Data}
 
 get_table <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 = NULL, try = FALSE, timeout = Inf) {
+
+  tbl_id <- toupper(tbl_id)
 
   # set query
 
@@ -128,10 +130,10 @@ get_table <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 =
 }
 
 #' @describeIn get_table It is used to prepare values for the argument \code{PERIOD} of the function \link{get_table}.
-#' @param start,end Starting and stopping moments of period which has following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD and QQ, respectively, indicate year, month, day and quarter of a date. These are written as a number has a leading zero, if necessary.
-#' @param period One of single characters "Y" (default), "M", "D" and "Q" which represent periods yearly, monthly, daily and quarterly respectively. There is one more value "F" which is supported by the API. However it can not be used for such function due to there is not a fixed rule for this type of periods.
+#' @param start,end Starting and stopping moments of a period which has the following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD, and QQ, respectively, indicate the year, month, day, and quarter of a date. If necessary, write it as a number that has a leading zero.
+#' @param period One of the following letters: "Y" (default), "M", "D", and "Q" respectively represent periods yearly, monthly, daily, and quarterly. There is the other value (F) that is supported by the API. It can not be used for such a function because it doesn't indicate a specific period.
 #'
-#' @return a character vector which contains an API compatible period.
+#' @return a character vector that contains an API compatible period
 #'
 #' @export
 
@@ -164,6 +166,6 @@ make_period <- function (start, end = NULL, period = "Y") {
     quarters <- format(seq(from = as.Date(start, format = "%Y%m%d"), as.Date(end, format = "%Y%m%d"), by = "quarters"), format = "%Y%m")
     return(paste0(substr(x = quarters, start = 1, stop = 4), sprintf("%02d", as.integer(substr(x = quarters, start = 5, stop = 6)) / 3)))
   } else {
-    stop("The argument period is invalid.")
+    stop("Period argument is invalid.")
   }
 }

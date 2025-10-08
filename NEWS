@@ -1,19 +1,23 @@
+1.5.0
+ - Automatically converts "tbl_id" and "subid" to uppercase.
+ - Corrected grammatical errors in the text.
+
 1.4.0
  - Converts raw content to characters by using UTF-8 encoding.
 
 1.3.0
- - The argument "na.rm" has been added to the function "all_tables".
- - Documentation of the function "make_period" has been corrected.
+ - The argument "na.rm" has been added to "all_tables" function.
+ - Documentation of "make_period" function has been corrected.
 
 1.2.0
  - The function "make_period" has been added.
- - The argument "timeout" has been added to main functions.
+ - The argument "timeout" has been added to the main functions.
  - The function "all_tables" has been entirely rewritten.
- - Examples have been modified to pass the automated checking of CRAN. The reason of such changes is unstable responses from the NSO server.
+ - Examples have been modified to pass the automated checking of CRAN. The reason for such changes is unstable responses from the NSO server.
 
 1.1.0
- - The error handling feature has been added due to a HTTP 500 error on the NSO server.
- - The new argument "simplify" has been added to the function "get_table_info". A user-friendly value is returned by using this new argument.
+ - The error handling feature has been added due to an HTTP 500 error on the NSO server.
+ - The new argument "simplify" has been added to "get_table_info" function. A user-friendly value is returned by using this new argument.
 
 1.0.0
  - Initial release
