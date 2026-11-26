@@ -29,6 +29,7 @@ validates the `query` structure and filter values against table metadata,
 sends a POST request, and attaches a `data.frame` (`df`) to the parsed response.
 }
 \examples{
+\donttest{
 # download table meta data
 tbl_meta <- nso_table(
   sector_id = "Population, household",
@@ -75,6 +76,7 @@ data <- nso_data(
 
 # print downloaded data
 print(data$df)
+}
 
 }
 \references{

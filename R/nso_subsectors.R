@@ -11,11 +11,13 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' subsectors <- nso_subsectors(
 #'   sector_id = "Population, household",
 #'   language = "en"
 #' )
 #' print(subsectors)
+#' }
 #'
 #' @seealso \link{nso_sectors}, \link{nso_tables}
 #'

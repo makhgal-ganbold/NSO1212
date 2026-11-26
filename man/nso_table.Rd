@@ -28,6 +28,7 @@ converts each variable's `values` and `valueTexts` into a `codes` data
 frame.
 }
 \examples{
+\donttest{
 # download table meta data
 tbl_meta <- nso_table(
   sector_id = "Population, household",
@@ -44,6 +45,7 @@ length(tbl_meta$variables)
 
 # code values
 tbl_meta$variables[[1]]
+}
 
 }
 \references{

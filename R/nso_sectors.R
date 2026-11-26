@@ -10,8 +10,10 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' sectors <- nso_sectors(language = "en")
 #' print(sectors)
+#' }
 #'
 #' @seealso \link{nso_subsectors}
 #'

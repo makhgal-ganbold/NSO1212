@@ -18,8 +18,10 @@ Fetches top-level sector information from the 1212.mn API v1 and returns
 it as a `data.frame`.
 }
 \examples{
+\donttest{
 sectors <- nso_sectors(language = "en")
 print(sectors)
+}
 
 }
 \references{

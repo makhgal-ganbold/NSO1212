@@ -22,6 +22,7 @@
 #' @importFrom stats setNames
 #'
 #' @examples
+#' \donttest{
 #' # download table meta data
 #' tbl_meta <- nso_table(
 #'   sector_id = "Population, household",
@@ -68,6 +69,7 @@
 #'
 #' # print downloaded data
 #' print(data$df)
+#' }
 #'
 #' @seealso \link{nso_table}
 #'

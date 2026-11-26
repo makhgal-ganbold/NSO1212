@@ -23,12 +23,14 @@ Validates that `subsector_id` belongs to `sector_id`, fetches the list of
 tables from the 1212.mn API v1, and returns it as a `data.frame`.
 }
 \examples{
+\donttest{
 tables <- nso_tables(
   sector_id = "Population, household",
   subsector_id = "1_Population, household",
   language = "en"
 )
 print(tables)
+}
 
 }
 \references{

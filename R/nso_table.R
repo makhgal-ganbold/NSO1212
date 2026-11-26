@@ -17,6 +17,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' # download table meta data
 #' tbl_meta <- nso_table(
 #'   sector_id = "Population, household",
@@ -33,6 +34,7 @@
 #'
 #' # code values
 #' tbl_meta$variables[[1]]
+#' }
 #'
 #' @seealso \link{nso_tables}, \link{nso_data}
 #'
