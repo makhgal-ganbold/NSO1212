@@ -3,7 +3,6 @@
 *.Rcheck/
 *.tar.gz
 *.zip
-*.Rd
 CRAN-RELEASE
 inst/CITATION
 NAMESPACE
