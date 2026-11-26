@@ -3,3 +3,6 @@
 ^LICENSE\.md$
 ^NSO1212\.Rproj$
 ^\.Rproj\.user$
+^\.git$
+^\.gitignore$
+^\.github$

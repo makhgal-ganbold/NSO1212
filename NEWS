@@ -1,3 +1,6 @@
+2.0.0
+ - Written from scratch due to the suspension of the previous version of the NSO API v2.0 (opendata.1212.mn)
+
 1.5.0
  - Automatically converts "tbl_id" and "subid" to uppercase.
  - Corrected grammatical errors in the text.
