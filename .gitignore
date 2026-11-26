@@ -1,1 +1,9 @@
 .Rproj.user
+.Rhistory
+*.Rcheck/
+*.tar.gz
+*.zip
+*.Rd
+CRAN-RELEASE
+CITATION
+NAMESPACE
