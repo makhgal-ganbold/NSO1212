@@ -3,6 +3,7 @@
 *.Rcheck/
 *.tar.gz
 *.zip
+cran-comments.md
 CRAN-RELEASE
 CRAN-SUBMISSION
 inst/CITATION
