@@ -1,13 +1,13 @@
 
 ## Test environments
 
-* local Ubuntu 20.04.2 LTS, R 3.6.3
-* builder.r-hub.io (devtools::check_rhub())
-* devtools::check_win_oldrelease(), devtools::check_win_release(), devtools::check_win_devel()
+* local Ubuntu 26.04.1 LTS, R 4.6.2
+* devtools::check_win_devel(), devtools::check_win_release()
+* rhub::rhub_check()
 
 ## R CMD check results
 
-There were no ERRORs, WARNINGs or NOTEs when we checked with the functions devtools::check(), devtools::check_win_oldrelease(), devtools::check_win_release(), devtools::check_win_devel() and devtools::check_rhub().
+There were no ERRORs, WARNINGs or NOTEs when we checked with the functions rcmdcheck::rcmdcheck(args = "--as-cran", check_dir = "check"), devtools::check_win_devel(), devtools::check_win_release() and rhub::rhub_check().
 
 ## Downstream dependencies
 
